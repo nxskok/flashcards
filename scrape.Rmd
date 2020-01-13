@@ -1,0 +1,36 @@
+---
+title: "scrape welsh vocab"
+output: html_notebook
+---
+
+## packages
+
+```{r}
+library(tidyverse)
+library(rvest)
+```
+
+get the vocab page
+
+```{r}
+html <- read_html("http://mylanguages.org/welsh_vocabulary.php")
+html
+```
+
+```{r}
+html %>% html_table() -> ldf
+ldf
+```
+
+```{r}
+tibble(i=1:3, l=ldf) %>% 
+  slice(-3) %>% 
+  unnest(l) %>% 
+  rename(test=3, reference=2) %>% 
+  filter(reference!="") %>% 
+  filter(test!="") %>% 
+  select(-1) %>%
+  select(test, reference) %>% 
+  write_tsv("data-raw/vocab.tsv")
+```
+
