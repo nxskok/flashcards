@@ -7,9 +7,7 @@
 
 <!-- badges: end -->
 
-The goal of flashcards is to bring some Hebrew into my daily R work. All
-these words are gathered on the job, so they tend to be related to data
-science / fraud / e-commerce / programming.
+The goal of flashcards is to test my Welsh vocabulary.
 
 ## Installation
 
@@ -18,7 +16,7 @@ You can install the development version of `flashcards` from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("isteves/flashcards")
+devtools::install_github("nxskok/flashcards")
 ```
 
 ## Example
@@ -33,11 +31,11 @@ test_vocab()
 It prompts you for the definition of a vocab word and gives three
 choices to choose from. For example, like this:
 
-    What does מדבג mean? 
+    What does trwm mean? 
     
-    1: to separate
-    2: indication
-    3: debug
+    1: table
+    2: pharmacy
+    3: heavy
     
     Selection: <enter your selection>
 
